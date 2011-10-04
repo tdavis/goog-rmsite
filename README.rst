@@ -16,8 +16,15 @@ This isn't yet on PyPi, so install it directly with ``pip``::
 You will also likely need to install ``xephyr`` and ``xvfb``, used for managing
 the virtual display which removes the need for a visible browser. How you
 install these depends on your operating system. Ubuntu users should install the
-``xvfb`` and ``xserver-xephyr`` packages; Fedora users should install
-``xorg-x11-server-Xephyr`` and ``xorg-x11-server-Xvfb``.
+``xvfb`` and ``xserver-xephyr`` packages; Fedora users should do something
+like::
+
+   $ yum install xorg-x11-server-Xephyr xorg-x11-server-Xvfb
+   $ daemonize -p /tmp/xvfb100 `which Xvfb` :100 -ac
+   $ DISPLAY=:100.0 rmsite [...]
+
+This daemonizes a new virtual display and then instructs ``rmsite`` to use it.
+You may kill the display with ``kill `cat /tmp/xvfb100```.
 
 
 Usage

@@ -26,7 +26,7 @@ def setup(domain):
     """
     driver = webdriver.Firefox()
     driver.implicitly_wait(5)
-    display = Display(visible=0, size=(800, 600))
+    display = Display(visible=0, size=(1024, 768))
     display.start()
     return display, driver
 
