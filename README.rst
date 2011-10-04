@@ -11,7 +11,7 @@ Installation
 
 This isn't yet on PyPi, so install it directly with ``pip``::
 
-   $ pip install -e git://github.com/tdavis/goog-rmsite.git 
+   $ pip install -e git://github.com/tdavis/goog-rmsite.git#egg=good-rmsite 
 
 You will also likely need to install ``xephyr`` and ``xvfb``, used for managing
 the virtual display which removes the need for a visible browser. How you
